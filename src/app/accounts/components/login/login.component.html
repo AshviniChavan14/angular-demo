@@ -1,0 +1,29 @@
+
+<form #loginForm="ngForm" (ngSubmit)="login(loginForm.form)">
+
+<p>login works!</p>
+<br>
+<p>UserName : <input type="text" name="userNameEditControl" [(ngModel)]="userName" #userNameFormControl="ngModel" required>
+    <div *ngIf="userNameFormControl.errors">
+        <output *ngIf="userNameFormControl.errors['required']">UserName is required</output>
+    </div>
+<br>
+<p>Password : <input type="password" name ="passwordEditControl" [(ngModel)]="password"></p>
+<br>
+<p>Email : <input type="email" name="emailControl" #emailEditControl="ngModel" [(ngModel)]="emailValue" email="true">
+    <div *ngIf="emailEditControl.errors">
+        <output *ngIf="emailEditControl.errors['email']">Enter valid email</output>
+    </div>
+<br>
+<input type="submit" value="login" formnovalidate>
+<!-- <button (click)="login()">Login</button> -->
+<br>
+<br>
+<input type="button" value="Reset" (click)="Reset(loginForm.form)"/>
+<br>
+<p>UserName : {{userName}}</p>
+<p>Password : {{password}}</p>
+<p>Email : {{emailValue}}</p>
+
+</form>
+
