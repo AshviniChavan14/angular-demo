@@ -2,13 +2,17 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { OutputComponent } from './Ashvini/output.component';
+import { WidgetModule } from './widgets/widgets.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    OutputComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    WidgetModule
   ],
   providers: [],
   bootstrap: [AppComponent]
